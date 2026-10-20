@@ -11,3 +11,9 @@
 # Wskazówka: warunek zapiszesz w jednej linii z and / or.
 
 # TODO: Twój kod poniżej
+a = int(input("Podaj rok: "))
+if (a % 4 == 0 and a % 100 != 0) or (a % 400 == 0):
+    print(f"Rok {a} jest przestępny")
+else:
+    print(f"Rok {a} nie jest przestępny")
+    
