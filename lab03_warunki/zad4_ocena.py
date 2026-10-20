@@ -13,3 +13,16 @@
 # Uwaga: w zachęcie input() nie wypisuj liczb (np. „0-100”) – testy szukają liczb w wyjściu.
 
 # TODO: Twój kod poniżej
+a = float(input("Podaj liczbę punktów: "))
+if a > 91:
+    print("Ocena: 5")
+elif a > 83:
+    print("Ocena: 4.5")
+elif a > 75:
+    print("Ocena: 4")
+elif a > 67:
+    print("Ocena: 3.5")
+elif a > 60:
+    print("Ocena: 3")
+else:
+    print("Ocena: 2")
