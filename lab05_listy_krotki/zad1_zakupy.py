@@ -16,3 +16,23 @@
 shopping = []
 
 # TODO: Twój kod poniżej
+a = True
+while a:
+    line = input()
+    command, _, item = line.partition(" ")
+    if command == "dodaj":
+        shopping.append(item)
+    elif command == "usuń":
+        if item in shopping:
+            shopping.remove(item)
+        else:
+            print("Nie ma takiego produktu")
+    elif command == "sortuj":
+        shopping.sort()
+    elif command == "pokaż":
+        if len(shopping) > 0:
+            print(", ".join(shopping))
+        else:
+            print("Lista jest pusta")
+    elif command == "koniec":
+        a = False
