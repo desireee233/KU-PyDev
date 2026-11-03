@@ -11,3 +11,14 @@
 # Uwaga: liczba 0 ma jedną cyfrę.
 
 # TODO: Twój kod poniżej
+a = int(input("Podaj nieujemną liczbę całkowitą: "))
+suma = 0
+liczba_cyfr = 0
+
+while a > 0:
+    suma += a % 10
+    liczba_cyfr += 1
+    a //= 10
+
+print(f"Suma cyfr: {suma}")
+print(f"Liczba cyfr: {liczba_cyfr}")
