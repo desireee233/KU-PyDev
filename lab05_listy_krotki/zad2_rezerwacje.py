@@ -22,3 +22,32 @@ SEATS_PER_ROW = 8
 reservations = []
 
 # TODO: Twój kod poniżej
+a = True
+while a:
+    line = input()
+    parts = line.split()
+    command = parts[0]
+    if command == "rezerwuj":
+        row, seat = int(parts[1]), int(parts[2])
+        if row < 1 or row > ROWS or seat < 1 or seat > SEATS_PER_ROW:
+            print(f"Nie ma takiego miejsca")
+        elif (row, seat) in reservations:
+            print(f"Miejsce ({row}, {seat}) jest zajęte")
+        else:
+            reservations.append((row, seat))
+            print(f"Zarezerwowano ({row}, {seat})")
+    elif command == "anuluj":
+        row, seat = int(parts[1]), int(parts[2])
+        if (row, seat) in reservations:
+            reservations.remove((row, seat))
+            print(f"Anulowano rezerwację ({row}, {seat})")
+        else:
+            print("Brak takiej rezerwacji")
+    elif command == "lista":
+        print(sorted(reservations))
+    elif command == "wolne":
+        total_seats = ROWS * SEATS_PER_ROW
+        free_seats = total_seats - len(reservations)
+        print(f"Wolne miejsca: {free_seats}")
+    elif command == "koniec":
+        a = False
