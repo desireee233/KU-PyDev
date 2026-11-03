@@ -14,3 +14,12 @@
 # Wskazówka: [int(x) for x in ...] poznasz później – na razie zbuduj listę pętlą for.
 
 # TODO: Twój kod poniżej
+a = input()
+numbers = [int(x) for x in a.split()]
+print(f"Pierwsze 3: {numbers[:3]}")
+print(f"Ostatnie 3: {numbers[-3:]}")
+print(f"Co drugi: {numbers[::2]}")
+print(f"Odwrócona: {numbers[::-1]}")
+sorted_numbers = sorted(numbers)
+print(f"Posortowana: {sorted_numbers}")
+print(f"Min: {min(numbers)}, max: {max(numbers)}, suma: {sum(numbers)}")
