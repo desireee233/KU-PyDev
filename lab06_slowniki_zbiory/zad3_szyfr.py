@@ -14,3 +14,13 @@ ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 SHIFT = 3
 
 # TODO: Twój kod poniżej
+a = input()
+text = input().lower()
+if a == "s":
+    cipher_dict = {ALPHABET[i]: ALPHABET[(i + SHIFT) % 26] for i in range(len(ALPHABET))}
+    encrypted_text = ''.join(cipher_dict.get(char, char) for char in text)
+    print(encrypted_text)
+elif a == "d":
+    decipher_dict = {ALPHABET[(i + SHIFT) % 26]: ALPHABET[i] for i in range(len(ALPHABET))}
+    decrypted_text = ''.join(decipher_dict.get(char, char) for char in text)
+    print(decrypted_text)

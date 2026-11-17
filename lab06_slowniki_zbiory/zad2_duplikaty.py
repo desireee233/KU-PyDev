@@ -10,3 +10,16 @@
 # Sprawdzanie  x in seen  w zbiorze jest dużo szybsze niż w liście.
 
 # TODO: Twój kod poniżej
+a = input().split()
+seen = set()
+unique_words = []
+removed_count = 0
+for word in a:
+    if word not in seen:
+        seen.add(word)
+        unique_words.append(word)
+    else:
+        removed_count += 1
+        print("bez duplikatów:", " ".join(unique_words))
+        print("usunięto:", removed_count)
+        print("unikalne (alfabetycznie):", " ".join(sorted(seen)))
