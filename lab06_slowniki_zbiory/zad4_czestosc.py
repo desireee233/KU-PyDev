@@ -13,3 +13,11 @@
 #     (lambda dokładnie poznasz w labie 07 – na razie potraktuj ją jak przepis)
 
 # TODO: Twój kod poniżej
+a = input().split()
+counts = {}
+for word in a:
+    counts[word] = counts.get(word, 0) + 1
+sorted_counts = sorted(counts.items(), key=lambda pair: pair[1], reverse=True)
+for word, count in sorted_counts:
+    print(f"{word}: {count}")
+    
