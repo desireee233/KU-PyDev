@@ -14,3 +14,28 @@
 contacts = {}
 
 # TODO: Twój kod poniżej
+a = input()
+while a != "koniec":
+    if a.startswith("dodaj"):
+        _, name, phone = a.split()
+        contacts[name] = phone
+        print(f"Zapisano {name}")
+    elif a.startswith("szukaj"):
+        _, name = a.split()
+        if name in contacts:
+            print(contacts[name])
+        else:
+            print("Brak kontaktu")
+    elif a.startswith("usuń"):
+        _, name = a.split()
+        if name in contacts:
+            del contacts[name]
+            print(f"Usunięto {name}")
+        else:
+            print("Brak kontaktu")
+    elif a == "lista":
+        for name, phone in sorted(contacts.items()):
+            print(f"{name}: {phone}")
+    else:
+        print("Nieznane polecenie")
+    a = input()
